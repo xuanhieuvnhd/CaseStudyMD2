@@ -74,7 +74,7 @@ public class ProductManager implements Serializable {
     public void updateAmount() {
         for (int i = 0; i < CartManager.carts.size(); i++) {
             for (Product product : products) {
-                if (CartManager.carts.get(i).getId() == product.getId()) {
+                if (CartManager.carts.get(i).getProduct().getId() == product.getId()) {
                     product.setAmount(product.getAmount() - CartManager.carts.get(i).getCount());
                 }
             }

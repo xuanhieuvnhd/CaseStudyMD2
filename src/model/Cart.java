@@ -1,6 +1,6 @@
 package model;
 
-public class Cart extends Product {
+public class Cart{
     public static int ID = 1;
     private int id;
     private Account account;
@@ -25,16 +25,6 @@ public class Cart extends Product {
 
     public static void setID(int ID) {
         Cart.ID = ID;
-    }
-
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Account getAccount() {

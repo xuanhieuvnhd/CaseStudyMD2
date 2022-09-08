@@ -40,8 +40,8 @@ public class CartManager {
         System.out.print("Nhap so luong can mua: ");
         int newAmount = scanner.nextInt();
         for (Cart cart : carts) {
-            if (cart.getId() == id) {
-                cart.setAmount(cart.getAmount() + newAmount);
+            if (cart.getProduct().getId() == id) {
+                cart.getProduct().setAmount(cart.getProduct().getAmount() + newAmount);
                 break;
             }
         }
