@@ -1,21 +1,21 @@
-package storage;
+package storage.product;
 
-import model.Account;
+import model.Product;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class WriteDataAccount {
-    public static void writeData(ArrayList<Account> accounts) {
-        File file = new File("Account.txt");
+public class WriteData {
+    public static void writeData(ArrayList<Product> products) {
+        File file = new File("Product.txt");
         try {
             if (!file.exists()) {
                 file.createNewFile();
             }
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-            objectOutputStream.writeObject(accounts);
+            objectOutputStream.writeObject(products);
             objectOutputStream.close();
         } catch (Exception e) {
             System.out.println();

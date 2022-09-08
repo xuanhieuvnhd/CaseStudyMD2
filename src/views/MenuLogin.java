@@ -3,16 +3,16 @@ package views;
 import controller.LoginManager;
 
 import java.util.Scanner;
-import storage.ReadDataAccount;
-import storage.ReadDataProduct;
+
+import storage.product.ReadData;
 
 public class MenuLogin {
 
     public static void loginMenu() {
         Scanner scanner = new Scanner(System.in);
         LoginManager loginManager = new LoginManager();
-        ReadDataAccount.readData();
-        ReadDataProduct.readData();
+        storage.account.ReadData.readData();
+        ReadData.readData();
         int choice = -1;
         do {
             System.out.println("*****************************");

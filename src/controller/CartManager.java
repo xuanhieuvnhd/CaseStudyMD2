@@ -23,10 +23,10 @@ public class CartManager {
             try {
                 System.out.print("Nhap ma san pham can mua: ");
                 id = scanner.nextInt();
-                for (int i = 0; i < carts.size(); i++) {
-                    if (id == carts.get(i).getId()){
+                for (Cart cart : carts) {
+                    if (cart.getProduct().getId() == id) {
                         System.out.println("Da co trong gio hang");
-                       id = -1;
+                        id = -1;
                     }
                 }
             }catch (Exception e){
@@ -37,7 +37,7 @@ public class CartManager {
         }
 
         Product product = getProductByID(id);
-        System.out.println("Nhap so luong can mua: ");
+        System.out.print("Nhap so luong can mua: ");
         int newAmount = scanner.nextInt();
         for (Cart cart : carts) {
             if (cart.getId() == id) {
@@ -52,7 +52,7 @@ public class CartManager {
                 break;
             }
             if (newAmount > product1.getAmount()) {
-                System.out.println("Trong kho con" + product1.getAmount() + " ma ban chon " + newAmount + " thi khong du dap ung!!");
+                System.out.println("Trong kho con " + product1.getAmount() + " ma ban chon " + newAmount + " thi khong du dap ung!!");
                 System.out.println();
                 break;
             }
@@ -106,7 +106,6 @@ public class CartManager {
         System.out.println("Nhap ma san pham can xoa: ");
         int id;
         id = scanner.nextInt();
-        System.out.println(id);
         for (int i = 0; i < carts.size(); i++) {
             if (carts.get(i).getProduct().getId() == id) {
                 carts.remove(i);

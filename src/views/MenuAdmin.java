@@ -3,8 +3,7 @@ package views;
 import controller.CartManager;
 import controller.LoginManager;
 import controller.ProductManager;
-import storage.ReadDataAccount;
-import storage.ReadDataProduct;
+import storage.product.ReadData;
 
 import java.io.Serializable;
 import java.util.Scanner;
@@ -14,8 +13,8 @@ public class MenuAdmin implements Serializable {
         ProductManager productManage = new ProductManager();
         CartManager cartManager = new CartManager();
         Scanner scanner = new Scanner(System.in);
-        ReadDataAccount.readData();
-        ReadDataProduct.readData();
+        storage.account.ReadData.readData();
+        ReadData.readData();
         int choice = -1;
         do {
             System.out.println("-------------------Menu Admin-------------------");

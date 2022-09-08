@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
-import static storage.WriteDataProduct.writeData;
+import static storage.product.WriteData.writeData;
 
 public class ProductManager implements Serializable {
 
@@ -55,6 +55,7 @@ public class ProductManager implements Serializable {
             total += product.getAmount();
         }
         System.out.println("Tong so luong hang trong kho: " + total);
+        System.out.println("_______________________________________________________________");
     }
 
     public void findById(Scanner scanner) {
@@ -218,6 +219,7 @@ public class ProductManager implements Serializable {
         }
         System.out.println("San pham co gia cao nhat trong he thong la: ");
         System.out.println(products.get(product));
+        System.out.println("____________________________________________________________");
     }
 
     public void sortProductByPrice(Scanner scanner) {

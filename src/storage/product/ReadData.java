@@ -1,4 +1,4 @@
-package storage;
+package storage.product;
 import model.Product;
 
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import static controller.ProductManager.products;
 
-public class ReadDataProduct {
+public class ReadData {
     public static ArrayList<Product> readData() {
         File file = new File("Product.txt");
         try {

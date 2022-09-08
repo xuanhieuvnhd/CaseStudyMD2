@@ -3,8 +3,7 @@ package views;
 import controller.CartManager;
 import controller.LoginManager;
 import controller.ProductManager;
-import storage.ReadDataAccount;
-import storage.ReadDataProduct;
+import storage.product.ReadData;
 
 import java.util.Scanner;
 
@@ -14,8 +13,8 @@ public class MenuCustomer {
         ProductManager productManager = new ProductManager();
         CartManager cartManager = new CartManager();
         LoginManager loginManager = new LoginManager();
-        ReadDataProduct.readData();
-        ReadDataAccount.readData();
+        ReadData.readData();
+        storage.account.ReadData.readData();
         int choice;
         do {
             System.out.println("______ Menu Khach Hang _______");

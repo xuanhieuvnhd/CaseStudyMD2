@@ -1,4 +1,4 @@
-package storage;
+package storage.account;
 
 import model.Account;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static controller.LoginManager.accounts;
 
-public class ReadDataAccount {
+public class ReadData {
     public static ArrayList<Account> readData() {
         File file = new File("Account.txt");
             try {

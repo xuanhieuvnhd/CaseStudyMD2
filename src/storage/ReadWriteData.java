@@ -1,6 +1,9 @@
 package storage;
 
 
-public interface ReadWriteData {
+import java.util.List;
 
+public interface ReadWriteData <T>{
+    List<T> readData();
+    void writeData(List<T> list);
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import static storage.WriteDataAccount.writeData;
+import static storage.account.WriteData.writeData;
 
 public class LoginManager {
     public static ArrayList<Account> accounts = new ArrayList<>();
