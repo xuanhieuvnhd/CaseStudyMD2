@@ -24,13 +24,13 @@ public class CartManager {
         for (int i = 0; i < carts.size(); i++) {
             if (id == carts.get(i).getId()){
                 System.out.println("Da co trong gio hang");
-                System.out.print("Nhap ma san pham muon mua: ");
-                id = Integer.parseInt(scanner.nextLine());
+                System.out.println("Nhap ma san pham muon mua: ");
+                id = scanner.nextInt();
             }
         }
         Product product = getProductByID(id);
-        System.out.print("Nhap so luong can mua: ");
-        int newAmount = Integer.parseInt(scanner.nextLine());
+        System.out.println("Nhap so luong can mua: ");
+        int newAmount = scanner.nextInt();
         for (Cart cart : carts) {
             if (cart.getId() == id) {
                 cart.setAmount(cart.getAmount() + newAmount);
@@ -71,7 +71,7 @@ public class CartManager {
     }
 
     public void displayCart() {
-
+        System.out.println("Cac san pham co trong gio hang:");
         System.out.printf("%5s%15s%24s%18s%20s%20s\n", "Ma so", "Hang", "Ten san pham", "Gia", "So luong", "Kich co");
         for (int i = 0; i < carts.size(); i++) {
             System.out.println();
@@ -95,7 +95,7 @@ public class CartManager {
     }
 
     public void deleteProductInCart() {
-        System.out.print("Nhap ma san pham can xoa: ");
+        System.out.println("Nhap ma san pham can xoa: ");
         int id;
         id = scanner.nextInt();
         for (int i = 0; i < carts.size(); i++) {
@@ -109,6 +109,7 @@ public class CartManager {
         System.out.print("Hay gui phan hoi cho chung toi : ");
         String feedback = scanner.nextLine();
         CartManager.feedback.add(feedback);
+        System.out.println("Gui phan hoi thanh cong!");
     }
     public void displayFeedback(){
         for (String a: feedback) {
