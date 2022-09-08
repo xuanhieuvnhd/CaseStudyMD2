@@ -18,16 +18,24 @@ public class CartManager {
     }
 
     public Cart createCart() {
-
-        System.out.print("Nhap ma san pham can mua: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < carts.size(); i++) {
-            if (id == carts.get(i).getId()){
-                System.out.println("Da co trong gio hang");
-                System.out.println("Nhap ma san pham muon mua: ");
+        int id=-1;
+        while (id < 0){
+            try {
+                System.out.print("Nhap ma san pham can mua: ");
                 id = scanner.nextInt();
+                for (int i = 0; i < carts.size(); i++) {
+                    if (id == carts.get(i).getId()){
+                        System.out.println("Da co trong gio hang");
+                       id = -1;
+                    }
+                }
+            }catch (Exception e){
+                System.out.println("Ban dang nhap chu");
+                scanner.nextLine();
+                id = -1;
             }
         }
+
         Product product = getProductByID(id);
         System.out.println("Nhap so luong can mua: ");
         int newAmount = scanner.nextInt();
@@ -98,8 +106,9 @@ public class CartManager {
         System.out.println("Nhap ma san pham can xoa: ");
         int id;
         id = scanner.nextInt();
+        System.out.println(id);
         for (int i = 0; i < carts.size(); i++) {
-            if (carts.get(i).getId() == id) {
+            if (carts.get(i).getProduct().getId() == id) {
                 carts.remove(i);
                 System.out.println("Xoa san pham thanh cong");
             }
